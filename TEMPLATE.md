@@ -1,4 +1,3 @@
-This file is used to hold the header.
 The navbar here has all buttons and need to be modified by removing the unwanted once.
 
     	<header class="bg-slate-900 text-white">
@@ -35,3 +34,17 @@ The navbar here has all buttons and need to be modified by removing the unwanted
     			</a>
     		</nav>
     	</header>
+
+This is a aditional class for tailwind to target the dialog element correctly. Normally I would use javascript to make this happen. But this is a nice work around.
+
+dialog:not(:target) {
+display: none;
+}
+
+dialog:target {
+display: block;
+position: fixed;
+inset: 0;
+margin: auto;
+z-index: 50;
+}
