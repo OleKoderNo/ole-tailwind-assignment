@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+dialog:not(:target) {
+	display: none;
+}
+
+dialog:target {
+	display: block;
+	position: fixed;
+	inset: 0;
+	margin: auto;
+	z-index: 50;
+}

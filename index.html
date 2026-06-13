@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Log in</title>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+
+	<body class="flex min-h-screen items-center justify-center bg-slate-900">
+		<main class="w-full max-w-sm rounded bg-slate-600 p-6 text-white">
+			<h1 class="mb-6 text-2xl font-bold">Log in</h1>
+
+			<form action="/profile/" method="get" class="flex flex-col gap-4">
+				<div>
+					<label for="email" class="mb-1 block">Email</label>
+					<input
+						id="email"
+						name="email"
+						type="email"
+						required
+						class="w-full rounded bg-white px-3 py-2 text-slate-900"
+					/>
+				</div>
+
+				<div>
+					<label for="password" class="mb-1 block">Password</label>
+					<input
+						id="password"
+						name="password"
+						type="password"
+						required
+						minlength="8"
+						class="w-full rounded bg-white px-3 py-2 text-slate-900"
+					/>
+				</div>
+
+				<button
+					type="submit"
+					class="cursor-pointer rounded bg-blue-500 px-4 py-2 font-medium text-white hover:bg-blue-400"
+				>
+					Log in
+				</button>
+			</form>
+		</main>
+	</body>
+</html>
