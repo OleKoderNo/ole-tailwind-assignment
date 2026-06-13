@@ -1,39 +1,6 @@
 /*! tailwindcss v4.3.1 | MIT License | https://tailwindcss.com */
-@layer properties {
-	@supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-		((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-		*,
-		:before,
-		:after,
-		::backdrop {
-			--tw-border-style: solid;
-			--tw-font-weight: initial;
-			--tw-shadow: 0 0 #0000;
-			--tw-shadow-color: initial;
-			--tw-shadow-alpha: 100%;
-			--tw-inset-shadow: 0 0 #0000;
-			--tw-inset-shadow-color: initial;
-			--tw-inset-shadow-alpha: 100%;
-			--tw-ring-color: initial;
-			--tw-ring-shadow: 0 0 #0000;
-			--tw-inset-ring-color: initial;
-			--tw-inset-ring-shadow: 0 0 #0000;
-			--tw-ring-inset: initial;
-			--tw-ring-offset-width: 0px;
-			--tw-ring-offset-color: #fff;
-			--tw-ring-offset-shadow: 0 0 #0000;
-			--tw-backdrop-blur: initial;
-			--tw-backdrop-brightness: initial;
-			--tw-backdrop-contrast: initial;
-			--tw-backdrop-grayscale: initial;
-			--tw-backdrop-hue-rotate: initial;
-			--tw-backdrop-invert: initial;
-			--tw-backdrop-opacity: initial;
-			--tw-backdrop-saturate: initial;
-			--tw-backdrop-sepia: initial;
-		}
-	}
-}
+@layer properties;
+@layer theme, base, components, utilities;
 @layer theme {
 	:root,
 	:host {
@@ -79,25 +46,20 @@
 }
 @layer base {
 	*,
-	:after,
-	:before,
-	::backdrop {
-		box-sizing: border-box;
-		border: 0 solid;
-		margin: 0;
-		padding: 0;
-	}
+	::after,
+	::before,
+	::backdrop,
 	::file-selector-button {
 		box-sizing: border-box;
-		border: 0 solid;
 		margin: 0;
 		padding: 0;
+		border: 0 solid;
 	}
 	html,
 	:host {
+		line-height: 1.5;
 		-webkit-text-size-adjust: 100%;
 		tab-size: 4;
-		line-height: 1.5;
 		font-family: var(
 			--default-font-family,
 			ui-sans-serif,
@@ -133,8 +95,6 @@
 	a {
 		color: inherit;
 		-webkit-text-decoration: inherit;
-		-webkit-text-decoration: inherit;
-		-webkit-text-decoration: inherit;
 		text-decoration: inherit;
 	}
 	b,
@@ -165,10 +125,10 @@
 	}
 	sub,
 	sup {
-		vertical-align: baseline;
 		font-size: 75%;
 		line-height: 0;
 		position: relative;
+		vertical-align: baseline;
 	}
 	sub {
 		bottom: -0.25em;
@@ -203,8 +163,8 @@
 	iframe,
 	embed,
 	object {
-		vertical-align: middle;
 		display: block;
+		vertical-align: middle;
 	}
 	img,
 	video {
@@ -215,36 +175,16 @@
 	input,
 	select,
 	optgroup,
-	textarea {
-		font: inherit;
-		font-feature-settings: inherit;
-		font-variation-settings: inherit;
-		letter-spacing: inherit;
-		color: inherit;
-		opacity: 1;
-		background-color: #0000;
-		border-radius: 0;
-	}
-	dialog:not(:target) {
-		display: none;
-	}
-
-	dialog:target {
-		display: block;
-		position: fixed;
-		inset: 0;
-		margin: auto;
-		z-index: 50;
-	}
+	textarea,
 	::file-selector-button {
 		font: inherit;
 		font-feature-settings: inherit;
 		font-variation-settings: inherit;
 		letter-spacing: inherit;
 		color: inherit;
-		opacity: 1;
-		background-color: #0000;
 		border-radius: 0;
+		background-color: transparent;
+		opacity: 1;
 	}
 	:where(select:is([multiple], [size])) optgroup {
 		font-weight: bolder;
@@ -258,12 +198,10 @@
 	::placeholder {
 		opacity: 1;
 	}
-	@supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
+	@supports (not (-webkit-appearance: -apple-pay-button)) or (contain-intrinsic-size: 1px) {
 		::placeholder {
-			color: currentColor;
-		}
-		@supports (color: color-mix(in lab, red, red)) {
-			::placeholder {
+			color: currentcolor;
+			@supports (color: color-mix(in lab, red, red)) {
 				color: color-mix(in oklab, currentcolor 50%, transparent);
 			}
 		}
@@ -284,30 +222,14 @@
 	::-webkit-datetime-edit-fields-wrapper {
 		padding: 0;
 	}
-	::-webkit-datetime-edit {
-		padding-block: 0;
-	}
-	::-webkit-datetime-edit-year-field {
-		padding-block: 0;
-	}
-	::-webkit-datetime-edit-month-field {
-		padding-block: 0;
-	}
-	::-webkit-datetime-edit-day-field {
-		padding-block: 0;
-	}
-	::-webkit-datetime-edit-hour-field {
-		padding-block: 0;
-	}
-	::-webkit-datetime-edit-minute-field {
-		padding-block: 0;
-	}
-	::-webkit-datetime-edit-second-field {
-		padding-block: 0;
-	}
-	::-webkit-datetime-edit-millisecond-field {
-		padding-block: 0;
-	}
+	::-webkit-datetime-edit,
+	::-webkit-datetime-edit-year-field,
+	::-webkit-datetime-edit-month-field,
+	::-webkit-datetime-edit-day-field,
+	::-webkit-datetime-edit-hour-field,
+	::-webkit-datetime-edit-minute-field,
+	::-webkit-datetime-edit-second-field,
+	::-webkit-datetime-edit-millisecond-field,
 	::-webkit-datetime-edit-meridiem-field {
 		padding-block: 0;
 	}
@@ -318,15 +240,11 @@
 		box-shadow: none;
 	}
 	button,
-	input:where([type="button"], [type="reset"], [type="submit"]) {
-		appearance: button;
-	}
+	input:where([type="button"], [type="reset"], [type="submit"]),
 	::file-selector-button {
 		appearance: button;
 	}
-	::-webkit-inner-spin-button {
-		height: auto;
-	}
+	::-webkit-inner-spin-button,
 	::-webkit-outer-spin-button {
 		height: auto;
 	}
@@ -334,7 +252,6 @@
 		display: none !important;
 	}
 }
-@layer components;
 @layer utilities {
 	.fixed {
 		position: fixed;
@@ -409,7 +326,7 @@
 		width: calc(var(--spacing) * 28);
 	}
 	.w-\[min\(32rem\,calc\(100\%-1\.5rem\)\)\] {
-		width: min(32rem, 100% - 1.5rem);
+		width: min(32rem, calc(100% - 1.5rem));
 	}
 	.w-full {
 		width: 100%;
@@ -469,7 +386,7 @@
 		border-radius: 0.25rem;
 	}
 	.rounded-full {
-		border-radius: 3.40282e38px;
+		border-radius: calc(infinity * 1px);
 	}
 	.rounded-lg {
 		border-radius: var(--radius-lg);
@@ -492,10 +409,8 @@
 		border-color: var(--color-white);
 	}
 	.bg-black\/60 {
-		background-color: #0009;
-	}
-	@supports (color: color-mix(in lab, red, red)) {
-		.bg-black\/60 {
+		background-color: color-mix(in srgb, #000 60%, transparent);
+		@supports (color: color-mix(in lab, red, red)) {
 			background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
 		}
 	}
@@ -521,7 +436,7 @@
 		background-color: var(--color-slate-900);
 	}
 	.bg-transparent {
-		background-color: #0000;
+		background-color: transparent;
 	}
 	.bg-white {
 		background-color: var(--color-white);
@@ -593,16 +508,16 @@
 	}
 	.shadow {
 		--tw-shadow:
-			0 1px 3px 0 var(--tw-shadow-color, #0000001a),
-			0 1px 2px -1px var(--tw-shadow-color, #0000001a);
+			0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)),
+			0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
 		box-shadow:
 			var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow),
 			var(--tw-ring-shadow), var(--tw-shadow);
 	}
 	.shadow-xl {
 		--tw-shadow:
-			0 20px 25px -5px var(--tw-shadow-color, #0000001a),
-			0 8px 10px -6px var(--tw-shadow-color, #0000001a);
+			0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)),
+			0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
 		box-shadow:
 			var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow),
 			var(--tw-ring-shadow), var(--tw-shadow);
@@ -618,66 +533,116 @@
 			var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,)
 			var(--tw-backdrop-sepia,);
 	}
-	.peer-checked\:flex:is(:where(.peer):checked ~ *) {
-		display: flex;
-	}
-	@media (hover: hover) {
-		.hover\:bg-blue-400:hover {
-			background-color: var(--color-blue-400);
-		}
-		.hover\:bg-blue-700:hover {
-			background-color: var(--color-blue-700);
-		}
-		.hover\:bg-green-700:hover {
-			background-color: var(--color-green-700);
-		}
-		.hover\:bg-slate-300:hover {
-			background-color: var(--color-slate-300);
-		}
-		.hover\:underline:hover {
-			text-decoration-line: underline;
-		}
-	}
-	@media (min-width: 48rem) {
-		.md\:block {
-			display: block;
-		}
-		.md\:flex {
+	.peer-checked\:flex {
+		&:is(:where(.peer):checked ~ *) {
 			display: flex;
 		}
-		.md\:hidden {
+	}
+	.hover\:bg-blue-400 {
+		&:hover {
+			@media (hover: hover) {
+				background-color: var(--color-blue-400);
+			}
+		}
+	}
+	.hover\:bg-blue-700 {
+		&:hover {
+			@media (hover: hover) {
+				background-color: var(--color-blue-700);
+			}
+		}
+	}
+	.hover\:bg-green-700 {
+		&:hover {
+			@media (hover: hover) {
+				background-color: var(--color-green-700);
+			}
+		}
+	}
+	.hover\:bg-slate-300 {
+		&:hover {
+			@media (hover: hover) {
+				background-color: var(--color-slate-300);
+			}
+		}
+	}
+	.hover\:underline {
+		&:hover {
+			@media (hover: hover) {
+				text-decoration-line: underline;
+			}
+		}
+	}
+	.md\:block {
+		@media (width >= 48rem) {
+			display: block;
+		}
+	}
+	.md\:flex {
+		@media (width >= 48rem) {
+			display: flex;
+		}
+	}
+	.md\:hidden {
+		@media (width >= 48rem) {
 			display: none;
 		}
-		.md\:h-56 {
+	}
+	.md\:h-56 {
+		@media (width >= 48rem) {
 			height: calc(var(--spacing) * 56);
 		}
-		.md\:w-40 {
+	}
+	.md\:w-40 {
+		@media (width >= 48rem) {
 			width: calc(var(--spacing) * 40);
 		}
-		.md\:w-80 {
+	}
+	.md\:w-80 {
+		@media (width >= 48rem) {
 			width: calc(var(--spacing) * 80);
 		}
-		.md\:w-auto {
+	}
+	.md\:w-auto {
+		@media (width >= 48rem) {
 			width: auto;
 		}
-		.md\:grid-cols-2 {
+	}
+	.md\:grid-cols-2 {
+		@media (width >= 48rem) {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
-		.md\:grid-cols-3 {
+	}
+	.md\:grid-cols-3 {
+		@media (width >= 48rem) {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
-		.md\:flex-row {
+	}
+	.md\:flex-row {
+		@media (width >= 48rem) {
 			flex-direction: row;
 		}
-		.md\:items-center {
+	}
+	.md\:items-center {
+		@media (width >= 48rem) {
 			align-items: center;
 		}
 	}
-	@media (min-width: 64rem) {
-		.lg\:grid-cols-3 {
+	.lg\:grid-cols-3 {
+		@media (width >= 64rem) {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 	}
+}
+dialog:not(:target) {
+	display: none;
+}
+dialog:target {
+	display: block;
+	position: fixed;
+	inset: 0;
+	margin: auto;
+	z-index: 50;
 }
 @property --tw-border-style {
 	syntax: "*";
@@ -741,7 +706,7 @@
 @property --tw-ring-offset-width {
 	syntax: "<length>";
 	inherits: false;
-	initial-value: 0;
+	initial-value: 0px;
 }
 @property --tw-ring-offset-color {
 	syntax: "*";
@@ -788,4 +753,39 @@
 @property --tw-backdrop-sepia {
 	syntax: "*";
 	inherits: false;
+}
+@layer properties {
+	@supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+		((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+		*,
+		::before,
+		::after,
+		::backdrop {
+			--tw-border-style: solid;
+			--tw-font-weight: initial;
+			--tw-shadow: 0 0 #0000;
+			--tw-shadow-color: initial;
+			--tw-shadow-alpha: 100%;
+			--tw-inset-shadow: 0 0 #0000;
+			--tw-inset-shadow-color: initial;
+			--tw-inset-shadow-alpha: 100%;
+			--tw-ring-color: initial;
+			--tw-ring-shadow: 0 0 #0000;
+			--tw-inset-ring-color: initial;
+			--tw-inset-ring-shadow: 0 0 #0000;
+			--tw-ring-inset: initial;
+			--tw-ring-offset-width: 0px;
+			--tw-ring-offset-color: #fff;
+			--tw-ring-offset-shadow: 0 0 #0000;
+			--tw-backdrop-blur: initial;
+			--tw-backdrop-brightness: initial;
+			--tw-backdrop-contrast: initial;
+			--tw-backdrop-grayscale: initial;
+			--tw-backdrop-hue-rotate: initial;
+			--tw-backdrop-invert: initial;
+			--tw-backdrop-opacity: initial;
+			--tw-backdrop-saturate: initial;
+			--tw-backdrop-sepia: initial;
+		}
+	}
 }
