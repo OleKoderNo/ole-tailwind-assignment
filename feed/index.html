@@ -4,8 +4,44 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<link rel="stylesheet" href="../css/style.css" />
 	</head>
 	<body>
+		<header class="bg-slate-900 text-white">
+			<nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between p-4">
+				<a href="/" class="text-xl font-bold">Cool project name</a>
+
+				<input id="menu-toggle" type="checkbox" class="peer hidden" />
+
+				<label
+					for="menu-toggle"
+					class="cursor-pointer rounded border border-white px-4 py-2 md:hidden"
+					aria-label="Toggle menu"
+				>
+					☰
+				</label>
+
+				<!-- Mobile dropdown -->
+				<div class="hidden w-full flex-col gap-2 pt-4 text-center peer-checked:flex md:hidden">
+					<a href="/feed/" class="rounded bg-slate-700 px-4 py-2">Home</a>
+					<a href="/profile/" class="rounded bg-slate-700 px-4 py-2">Profile</a>
+					<a href="/index.html" class="rounded bg-blue-500 px-4 py-2">Log out</a>
+				</div>
+
+				<!-- Desktop menu -->
+				<div class="hidden flex-1 justify-center gap-6 md:flex">
+					<a href="/feed/" class="hover:underline">Home</a>
+					<a href="/profile/" class="hover:underline">Profile</a>
+				</div>
+
+				<a
+					href="/index.html"
+					class="hidden rounded bg-blue-500 px-4 py-2 hover:bg-blue-700 md:block"
+				>
+					Log out
+				</a>
+			</nav>
+		</header>
 		<!-- Make thjs the feed page. Include post with thumbnails, searchbar, sort option, and form to create a new post. -->
 	</body>
 </html>
